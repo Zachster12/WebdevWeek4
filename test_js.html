@@ -1,0 +1,21 @@
+<html>
+<head>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		var name_input = $('#name');
+		name_input.on('keyup', function(){
+			$('#name_place').html("Hey there, " + name_input.val());
+		});
+	});
+	</script>
+	<title>Trying Out Javascript</title>
+</head>
+<body>
+	<div id="name_place">Please enter your name to continue:</div>
+	<form>
+		Name: <input type="text" name="name" id="name" value="please enter your name"/>
+	</form>
+
+</body>
+</html>
