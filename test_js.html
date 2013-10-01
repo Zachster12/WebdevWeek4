@@ -7,15 +7,41 @@
 		name_input.on('keyup', function(){
 			$('#name_place').html("Hey there, " + name_input.val());
 		});
+
+		var calculator_input = $('#calculator_values'), 
+			plus_button = $('#plus_button'),
+			minus_button = $('#minus_button'),
+			multiply_button = $('#multiply_button'),
+			divide_button = $('#divide_button');
+
+		var current_value = 0;
+		calculator_input.val(current_value);
+
+		plus_button.on('click', function(){
+			var add_value = parseFloat(calculator_input.val());
+			current_value = add_value + current_value;
+			calculator_input.val(current_value);
+		});
+
 	});
 	</script>
-	<title>Trying Out Javascript</title>
+	<title>Our Javascript Calculator</title>
 </head>
 <body>
 	<div id="name_place">Please enter your name to continue:</div>
-	<form>
-		Name: <input type="text" name="name" id="name" value="please enter your name"/>
-	</form>
+	<p>Name: <input type="text" name="name" id="name" placeholder="Enter name"/></p>
+
+	This is my calculator! Thanks for trying it out!
+
+	<p>
+		<input type="text" id="calculator_values">
+		<button id="plus_button">+</button>
+		<button id="minus_button">-</button>
+		<button id="multiply_button">x</button>
+		<button id="divide_button">/</button>
+		<button id="square_root">&radic;</button>
+	</p>
+
 
 </body>
 </html>
